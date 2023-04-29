@@ -15,10 +15,10 @@ class WordPlay {
     this.offset = offset;
     this.speed = speed;
     this.delay = delay;
-    this.initialize();
+    this.init();
   }
 
-  initialize() {
+  init() {
     const paragraphs = document.querySelectorAll("." + this.className);
 
     paragraphs.forEach((p) => {
@@ -27,10 +27,11 @@ class WordPlay {
       if (this.mode === "word") {
         const words = p.innerText.split(" ");
 
-        elements = words.map((word) => {
+        elements = words.map((word, i) => {
           const span = document.createElement("span");
           span.innerText = word + " ";
           span.style.opacity = 0;
+          span.style.transitionDelay = i * parseFloat(this.delay) + "s";
           span.className = "ws__span";
 
           return span;
@@ -48,7 +49,7 @@ class WordPlay {
           span.className = "ws__span";
 
           return span;
-        }, this);
+        });
       }
 
       p.innerHTML = "";
@@ -58,13 +59,13 @@ class WordPlay {
       });
     }, this);
 
-    window.addEventListener("scroll", this.fadeIn.bind(this));
-    window.addEventListener("resize", this.fadeIn.bind(this));
+    window.addEventListener("scroll", this.reveal.bind(this));
+    window.addEventListener("resize", this.reveal.bind(this));
 
-    this.fadeIn();
+    this.reveal();
   }
 
-  fadeIn() {
+  reveal() {
     const paragraphs = document.querySelectorAll("." + this.className);
 
     paragraphs.forEach((p) => {
