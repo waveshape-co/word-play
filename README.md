@@ -15,11 +15,11 @@ Init
 ```
 document.addEventListener("DOMContentLoaded", () => {
   new WordPlay({
-    className: "hero-heading", // the text element
-    mode: "letter", // choose between letter or word
-    offset: 100, // offset if revealed by scroll
+    className: "hero-heading",
+    mode: "letter",
+    offset: 100,
     speed: 0.5,
-    delay: 0.025, // stagger delay
+    delay: 0.025,
   });
 });
 ```
