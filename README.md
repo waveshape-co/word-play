@@ -13,12 +13,14 @@ Import the code
 Init
 
 ```
-const fadeInEffect = new WordPlay({
-  className: "fade-in",
-  mode: "letter",
-  offset: 100,
-  speed: 1,
-  delay: 0.01,
+document.addEventListener("DOMContentLoaded", () => {
+  new WordPlay({
+    className: "hero-heading", // the text element
+    mode: "letter", // choose between letter or word
+    offset: 100, // offset if revealed by scroll
+    speed: 0.5,
+    delay: 0.025, // stagger delay
+  });
 });
 ```
 
