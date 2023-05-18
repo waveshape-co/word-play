@@ -24,24 +24,46 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
+## Multiple reveal elements on the same page
+
+WordPlay can be initialized as many times as you want. Simply make sure that you're using a unique class name for each instance.
+
+```
+new WordPlay({
+  className: "hero-heading",
+  mode: "letter",
+  offset: 100,
+  speed: 0.5,
+  delay: 0.025,
+});
+
+new WordPlay({
+  className: "hero-paragraph",
+  mode: "word",
+  offset: 100,
+  speed: 0.5,
+  delay: 0.025,
+});
+```
+
 ## Options
 
-### className
+### className (string)
 
 The class name of any p-element you wish to reveal when visible.
 
-### mode
+### mode (string)
 
 Either "word" or "letter". These modes either splits and reveals the paragraph(s) by word or letter.
 
-### offset
+### offset (integer)
 
 The offset (in pixels) of which the reveal animation will start when the p-element gets visible.
 
-### speed
+### speed (float)
 
 The speed of which each splitted element (word or letter) gets revealed.
 
-### delay
+### delay (float)
 
 The stagger delay between animated words or letters.
