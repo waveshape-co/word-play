@@ -67,3 +67,7 @@ The speed of which each splitted element (word or letter) gets revealed.
 ### delay (float)
 
 The stagger delay between animated words or letters.
+
+## Webflow usage
+
+If this interaction is used in Webflow, it's recommended to create a short 0.1s "while page finishes loading" opacity animation of the text element(s). This may prohibit any text flash (while the script is loading) that might occur otherwise.
